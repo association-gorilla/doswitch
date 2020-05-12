@@ -1,0 +1,2 @@
+class AchieveRatesController < ApplicationController
+end
