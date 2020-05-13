@@ -34,3 +34,4 @@
 yarn-debug.log*
 .yarn-integrity
 /yarn.lock
+/node_modules

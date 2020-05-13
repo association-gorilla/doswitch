@@ -1,0 +1,153 @@
+Bundler/OrderedGems:
+  Exclude:
+    - "Gemfile"
+
+Rails/HasManyOrHasOneDependent:
+  Exclude:
+    - "app/models/post.rb"
+
+# 日本語でコメントを書いても良いようにする
+Style/AsciiComments:
+  Exclude:
+    - "Gemfile"
+    - "db/migrate/**/*"
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - "test/test_helper.rb"
+
+# どういうclassかコメントを書かなくても良いようにする
+Style/Documentation:
+  Exclude:
+    - "spec/**/*"
+    - "test/**/*"
+    - "app/helpers/application_helper.rb"
+    - "app/mailers/application_mailer.rb"
+    - "app/models/application_record.rb"
+    - "config/application.rb"
+    - "db/migrate/**/*"
+
+Style/ExpandPathArguments:
+  Exclude:
+    - "bin/rails"
+    - "bin/rake"
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/MixinUsage:
+  Exclude:
+    - "bin/setup"
+    - "bin/update"
+
+Style/RedundantBegin:
+  Exclude:
+    - "bin/yarn"
+
+Style/StderrPuts:
+  Exclude:
+    - "bin/yarn"
+
+Style/StringLiterals:
+  Exclude:
+    - "bin/yarn"
+    - "config/environments/production.rb"
+    - "config/puma.rb"
+    - "test/**/*"
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Style/GuardClause:
+  Exclude:
+    - "app/controllers/homes_controller.rb"
+
+Layout/DefEndAlignment:
+  AutoCorrect: true
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  Exclude:
+    - "config/environments/production.rb"
+
+# 最大行数の設定
+Layout/LineLength:
+  Max: 150
+  Exclude:
+    - "app/models/form/plan_timing.rb"
+    - "app/controllers/friends_controller.rb"
+    - "app/helpers/notifications_helper.rb"
+    - "app/models/friend.rb"
+
+# タブが過剰(ストロングパラメータ用)
+Layout/IndentationStyle:
+  Exclude:
+    - "app/controllers/application_controller.rb"
+
+# インデントのしすぎの無視(ストロングパラメータ用)
+Layout/IndentationWidth:
+  Exclude:
+    - "app/controllers/application_controller.rb"
+
+Layout/EmptyLinesAroundClassBody:
+  Exclude:
+    - "test/**/*"
+
+# def~endの間に入れることが可能な行数を設定
+Metrics/MethodLength:
+  Max: 20
+  Exclude:
+    - "app/controllers/posts_controller.rb"
+    - "app/controllers/relearn_points_controller.rb"
+    - "app/controllers/completes_controller.rb"
+    - "app/models/post.rb"
+    - "app/models/rate.rb"
+    - "app/helpers/posts_helper.rb"
+
+Metrics/BlockLength:
+  Max: 25
+  Exclude:
+    - "lib/tasks/plan_timing.rake"
+    - "spec/**/*"
+
+# def~endの間に入れることが可能なAbcSizeを設定
+# AbcSizeとは「Assignment:変数への代入,Branch:メソッド呼び出し,Condition:条件文」左記3項目の合計ポイント
+# デフォルトで15に設定されている
+Metrics/AbcSize:
+  Exclude:
+
+  Enabled: true
+  Max: 30
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+Metrics/ParameterLists:
+  Max: 6
+
+Metrics/ModuleLength:
+  Max: 120
+
+Style/GuardClause:
+  Exclude:
+    - "app/models/total_point.rb"
+    - "app/models/rate.rb"
+
+AllCops:
+  Exclude:
+    # rubcopは**/*で終わる文字列のパターンを認識から除外する
+    - "public/**/*"
+    - "tmp/**/*"
+    - "log/**/*"
+    - "vendor/**/*"
