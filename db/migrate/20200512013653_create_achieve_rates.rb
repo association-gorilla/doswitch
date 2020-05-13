@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateAchieveRates < ActiveRecord::Migration[6.0]
   def change
     create_table :achieve_rates do |t|
