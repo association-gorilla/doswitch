@@ -1,6 +1,7 @@
-# frozen_string_literal: true
-
 class UsersController < ApplicationController
+  # ログインユーザーのみ実行可能にする
+  before_action :authenticate_user!
+
   def edit
     @user = User.find(params[:id])
   end
@@ -16,6 +17,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     flash[:danger] = 'ユーザーを削除しました'
+    redirect_to root_path
   end
 
   private
