@@ -5,7 +5,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
     create_table :users do |t|
       t.string :name
       t.string :email, null: false, default: ''
-      t.integer :image_id
+      t.text :image_id
       t.string :encrypted_password, null: false, default: ''
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
