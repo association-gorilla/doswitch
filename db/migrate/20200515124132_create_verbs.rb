@@ -1,8 +1,6 @@
-# frozen_string_literal: true
-
-class CreateActions < ActiveRecord::Migration[6.0]
+class CreateVerbs < ActiveRecord::Migration[6.0]
   def change
-    create_table :actions do |t|
+    create_table :verbs do |t|
       t.integer :user_id, null: false
       t.string :name, null: false
       # 設定中の項目
