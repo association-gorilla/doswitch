@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   #   :sessions => 'users/sessions',
   #   :passwords => 'users/passwords'
   # }
+  root 'homes#top'
+  get '/about' => 'homes#about'
   resources :users, only: [:edit, :update, :destroy]
 end
