@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class CreateRealAllots < ActiveRecord::Migration[6.0]
   def change
     create_table :real_allots do |t|
-      t.integer :action_id, null:false
+      t.integer :action_id, null: false
       # 実際の取り組みの配分
       t.float :allot
       # 実際の取り組み日数
