@@ -1,1 +1,8 @@
 <h2>トップページ</h2>
+
+<h3>【最優先アクション】</h3>
+  <%= @important_verb.name %><br>
+<h3>【設定中アクション】</h3>
+<% @selected_verbs.each do |verb| %>
+  <%= verb.name %><br>
+<% end %>
