@@ -21,6 +21,7 @@ gem 'refile', require: 'refile/rails', github: 'manfe/refile'
 gem 'refile-mini_magick'
 # BootstrapでSassを使うgem
 gem 'bootstrap-sass', '~> 3.4.1'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
