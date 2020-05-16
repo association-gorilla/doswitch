@@ -1,6 +1,6 @@
 class VerbsController < ApplicationController
   # ログインユーザーのみ実行可能にする
-  before_verb :authenticate_user!
+  before_action :authenticate_user!
 
   def create
     verb = Verb.new
@@ -14,7 +14,7 @@ class VerbsController < ApplicationController
   end
 
   def edit
-    @verb = verb.new
+    @verb = Verb.new
     @important_verb = Verb.find_by(user_id: current_user.id, important: true)
     @selected_verbs = Verb.where(user_id: current_user.id, selected: true, important: false)
     @verbs = Verb.where(user_id: current_user.id, selected: false, important: false)
@@ -22,7 +22,7 @@ class VerbsController < ApplicationController
 
   def update
     verb = Verb.find(params[:id])
-    if verb.update!(params[:name])
+    if verb.update!(verb_params)
       flash[:success] = '行動の更新に成功しました'
     else
       flash[:danger] = '行動の更新に失敗しました'

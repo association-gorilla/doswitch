@@ -8,9 +8,13 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
-    flash[:success] = 'ユーザー情報を更新しました'
-    render :edit
+    if @user.update(user_params)
+      flash[:success] = 'ユーザー情報を更新しました'
+      redirect_to edit_user_path
+    else
+      flash[:danger] = 'ユーザー情報を更新に失敗しました'
+      render :edit
+    end
   end
 
   def destroy

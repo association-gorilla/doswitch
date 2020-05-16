@@ -11,16 +11,17 @@
   <body>
     <main>
       <div class="container">
-        <div id="flash_messages">
-          <%= render "layouts/flash_messages" %>
-        </div>
+        <% if user_signed_in? %>
           link
           <%= link_to "トップ", root_path, class: "btn btn-default" %>
           <%= link_to "アバウト", about_path, class: "btn btn-default" %>
           <%= link_to "ユーザー設定", edit_user_path(current_user), class: "btn btn-default" %>
           <%= link_to "ログアウト",destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしますか？' }, class: "btn btn-default" %>
-          <%= yield %>
+        <% end %>
+        <div id="flash_messages">
+          <%= render "layouts/flash_messages" %>
         </div>
+        <%= yield %>
       </div>
     </main>
   </body>

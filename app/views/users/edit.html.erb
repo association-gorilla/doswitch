@@ -10,6 +10,6 @@
     <p>メールアドレス</p>
     <p><%= f.text_field :email ,placeholder: @user.email, class: "edit_email_form" %></p>
   </div>
-  <%= f.submit "更新",id:"user_edit", class: "btn" %>
-  <%= link_to "削除", user_path(@user.id), method: :delete, data: { confirm: "本当に削除しますか?" }, class: "btn" %>
+  <%= f.submit "更新",id:"user_edit", class: "btn btn-default" %>
+  <%= link_to "削除", user_path(@user.id), method: :delete, data: { confirm: "本当に削除しますか?" }, class: "btn btn-default" %>
 <% end %>
